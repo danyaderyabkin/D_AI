@@ -6,6 +6,11 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/D_AI/',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets'
+  },
   plugins: [
     vue(),
     vueDevTools(),
