@@ -13,7 +13,7 @@
       <!-- Параграф -->
       <p
         v-else-if="contentItem.type === 'paragraph' && hasContent(contentItem)"
-        class="text-gray-300 leading-relaxed text-sm"
+        class="text-gray-300 text-sm"
       >
         {{ contentItem.text }}
       </p>
@@ -63,7 +63,7 @@
         v-else-if="contentItem.type === 'code' && hasContent(contentItem)"
         class="my-3"
       >
-        <pre class="bg-neutral-900 rounded-lg p-4 overflow-x-auto"><code class="text-sm text-green-400">{{ contentItem.code }}</code></pre>
+        <pre class="bg-neutral-900 rounded-lg p-4 overflow-x-auto"><code class="text-xs text-green-400">{{ contentItem.code }}</code></pre>
       </div>
     </template>
   </div>

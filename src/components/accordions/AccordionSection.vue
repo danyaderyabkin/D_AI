@@ -12,6 +12,7 @@
           class="w-full pl-3 pr-6 py-1 bg-neutral-900 border border-neutral-800 rounded-md text-white placeholder-neutral-400 focus:outline-none  text-xs"
         >
         <button
+          v-if="searchQuery"
           @click.prevent="searchQuery = ''"
           class="absolute right-0 px-2 h-full text-xs text-gray-300 hover:text-white"
         >

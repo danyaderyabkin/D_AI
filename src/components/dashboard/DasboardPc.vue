@@ -5,21 +5,28 @@ import 'gridstack/dist/gridstack.min.css'
 import AccordionSection from '@/components/accordions/AccordionSection.vue'
 import { useHtmlData } from '@/composables/useHtmlData'
 import { useCssData } from '@/composables/useCssData'
+import { useVueData } from '@/composables/useVueData'
+import { useNuxtData } from '@/composables/useNuxtData'
+import { useJsData } from '@/composables/useJsData'
+
 
 const blocks = ref([
   { w: 4, h: 2, x: 0, y: 0, id: 'Unic1', type: 'HTML' },
   { w: 4, h: 2, x: 4, y: 0, id: 'Unic3', type: 'CSS' },
-  { w: 4, h: 2, x: 8, y: 0, id: 'Unic4', type: 'Git' },
-  { w: 4, h: 2, x: 12, y: 0, id: 'Unic5', type: 'Browser' },
-  { w: 4, h: 2, x: 0, y: 2, id: 'Unic6', type: 'Js' },
-  { w: 4, h: 2, x: 4, y: 2, id: 'Unic8', type: 'Ts' },
-  { w: 4, h: 2, x: 8, y: 2, id: 'Unic9', type: 'Vue' },
+  { w: 4, h: 2, x: 8, y: 0, id: 'Unic9', type: 'Vue' },
+  { w: 4, h: 2, x: 12, y: 0, id: 'Unic6', type: 'Js' },
+  { w: 4, h: 2, x: 0, y: 2, id: 'Unic4', type: 'Git' },
+  { w: 4, h: 2, x: 4, y: 2, id: 'Unic5', type: 'Browser' },
+  { w: 4, h: 2, x: 8, y: 2, id: 'Unic8', type: 'Ts' },
   { w: 4, h: 2, x: 12, y: 2, id: 'Unic7', type: 'Nuxt' },
 ])
 
 // Используем композаблы для получения данных
 const { htmlItems } = useHtmlData()
 const { cssItems } = useCssData()
+const { vueItems } = useVueData()
+const { nuxtItems } = useNuxtData()
+const { jsItems } = useJsData()
 
 const getAccordionProps = (type: string) => {
   const propsMap: Record<string, any> = {
@@ -32,28 +39,29 @@ const getAccordionProps = (type: string) => {
       placeholder: 'Поиск по CSS вопросам...'
     },
     // Добавьте другие типы по мере необходимости
-    Git: {
-      items: [],
-      placeholder: 'Поиск по Git вопросам...'
+    Vue: {
+      items: vueItems.value,
+      placeholder: 'Поиск по Vue вопросам...'
     },
     Browser: {
       items: [],
       placeholder: 'Поиск по Browser вопросам...'
     },
     Js: {
-      items: [],
+      items: jsItems.value,
       placeholder: 'Поиск по JavaScript вопросам...'
     },
     Ts: {
       items: [],
       placeholder: 'Поиск по TypeScript вопросам...'
     },
-    Vue: {
+
+    Git: {
       items: [],
-      placeholder: 'Поиск по Vue вопросам...'
+      placeholder: 'Поиск по Git вопросам...'
     },
     Nuxt: {
-      items: [],
+      items: nuxtItems.value,
       placeholder: 'Поиск по Nuxt вопросам...'
     }
   }
