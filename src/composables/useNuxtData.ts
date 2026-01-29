@@ -26,6 +26,15 @@ export function useNuxtData() {
           ]},
       ]
     },
+    {
+      id: 2,
+      title: 'Что такое гидратация в Nuxt?',
+      content: [
+        { type: 'paragraph', text: 'Гидратация в Nuxt — это процесс, при котором статичный HTML, сгенерированный на сервере, превращается в интерактивное веб-приложение.' },
+        { type: 'paragraph', text: 'Ошибка гидратации (hydration mismatch) в Nuxt возникает, когда HTML, сгенерированный на сервере, не точно соответствует тому, что Vue пытается отобразить на клиенте. ' },
+        { type: 'code', language: 'css', code: '' },
+      ]
+    },
   ])
 
   return { nuxtItems }
